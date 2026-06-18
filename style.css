@@ -86,9 +86,34 @@ h4, h5 {
   font-weight: normal;
 }
 
+/* Mega Menus */
+.dropdown-menu.megamenu {
+    background-color: #343a40 !important;
+    margin-top: 0px;
+    border-radius: 0px 0px 6px 6px;
+    font-weight: 500;
+}
+.megamenu.dividers .megamenu-col + .megamenu-col {
+    border-inline-start: 0px !important;
+}
+.dropdown-menu.megamenu .dropdown-header {
+    font-size: 11px !important;
+    color: #ccc !important;
+    letter-spacing: 1px;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--darkest-gray);
+}
+.dropdown-menu.megamenu .dropdown-item {
+    color: #fff !important;
+}
+.dropdown-menu.megamenu .dropdown-item:hover {
+    background-color: #000 !important;
+}
+
 /* ------- Banners ------- */
 .page-title {
-    color: #fff;
+    color: #fff !important;
     background-color: rgba(31,31,31,.9);
     font-size: var(--fs-xl);
     font-weight: 400 !important;
