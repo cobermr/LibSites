@@ -1,0 +1,15 @@
+
+/* ------- Navigation ------- */
+
+/* Hours */
+.s-lc-w-today .s-lc-w-head-pre {
+  display: none;
+}
+.s-lc-w-today span:not(.s-lc-w-head-pre) {
+  display: block;
+  clear: both;
+  padding: 15px 0px 10px;
+}
+.s-lc-w-today .s-lc-w-time {
+  font-weight: normal;
+}
