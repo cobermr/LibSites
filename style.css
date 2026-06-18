@@ -49,6 +49,9 @@ body {
 p {
   line-height: 1.6em;
 }
+a, a:hover, btn, btn:hover {
+    transition: var(--anim-fade) !important;
+}
 
 /* ------- Headers ------- */
 
@@ -84,6 +87,7 @@ h4, h5 {
 }
 .s-lc-w-today .s-lc-w-time {
   font-weight: normal;
+  text-align: right;
 }
 
 /* Mega Menus */
@@ -93,7 +97,8 @@ h4, h5 {
     border-radius: 0px 0px 6px 6px;
     font-weight: 500;
 }
-.megamenu.dividers .megamenu-col + .megamenu-col {
+.megamenu.dividers .megamenu-col {
+    padding: 24px;
     border-inline-start: 0px !important;
 }
 .dropdown-menu.megamenu .dropdown-header {
@@ -106,15 +111,60 @@ h4, h5 {
 }
 .dropdown-menu.megamenu .dropdown-item {
     color: #fff !important;
+    padding: 8px 16px;
 }
 .dropdown-menu.megamenu .dropdown-item:hover {
     background-color: #000 !important;
 }
 
-/* ------- Banners ------- */
+/* ------- Page Title ------- */
 .page-title {
     color: #fff !important;
     background-color: rgba(31,31,31,.9);
     font-size: var(--fs-xl);
     font-weight: 400 !important;
+}
+
+/* ------- Cards ------- */
+
+
+
+
+
+/* ---------------------- Media Queries -------------------- */
+
+/* -------------- Small devices (landscape phones, 576px and up) -------------- */
+@media (min-width: 576px) {
+  
+}
+
+/* -------------- Medium devices (tablets, 768px and up) -------------- */
+@media (min-width: 768px) {
+
+/* ------- Banners ------- */
+.page-title {
+    font-size: var(--fs-xxl);
+    width: fit-content;
+}
+
+}
+
+/* -------------- Large devices (desktops, 992px and up) -------------- */
+@media (min-width: 992px) {
+
+}
+
+/* -------------- X-Large devices (large desktops, 1200px and up) -------------- */
+@media (min-width: 1200px) {
+
+}
+
+/* -------------- XX-Large devices (larger desktops, 1400px and up) -------------- */
+@media (min-width: 1400px) {
+  
+}
+
+/* -------------- Large devices AND SMALLER (desktops, 992px and down) -------------- */
+@media (max-width: 991.98px) {
+
 }
