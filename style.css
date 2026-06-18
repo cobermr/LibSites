@@ -77,13 +77,14 @@ h4, h5 {
 /* ------- Navigation ------- */
 
 /* Hours */
+.hours-today {
+
+}
 .hours-col-loc {
   display: none;
 }
-.s-lc-w-today span:not(.hours-col-loc) {
-  display: block;
-  clear: both;
-  padding: 15px 0px 10px;
+.hours-col-time {
+    text-align:right;
 }
 .s-lc-w-today .s-lc-w-time {
   font-weight: normal;
@@ -166,5 +167,7 @@ h4, h5 {
 
 /* -------------- Large devices AND SMALLER (desktops, 992px and down) -------------- */
 @media (max-width: 991.98px) {
-
+.w-75 {
+    width: 100% !important;
+}
 }
