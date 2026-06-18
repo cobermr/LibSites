@@ -39,7 +39,7 @@
   --anim-arrow-fast: 0.2s ease-in;
 }
 
-/* ------- General ------- */
+/* ------- General, Text & Links ------- */
 html {
   scroll-behavior: smooth;
 }
@@ -74,14 +74,22 @@ h4, h5 {
 /* ------- Navigation ------- */
 
 /* Hours */
-.s-lc-w-today .s-lc-w-head-pre {
+.hours-col-loc {
   display: none;
 }
-.s-lc-w-today span:not(.s-lc-w-head-pre) {
+.s-lc-w-today span:not(.hours-col-loc) {
   display: block;
   clear: both;
   padding: 15px 0px 10px;
 }
 .s-lc-w-today .s-lc-w-time {
   font-weight: normal;
+}
+
+/* ------- Banners ------- */
+.page-title {
+    color: #fff;
+    background-color: rgba(31,31,31,.9);
+    font-size: var(--fs-xl);
+    font-weight: 400 !important;
 }
