@@ -65,3 +65,15 @@ $(document).ready(function () {
     });
 
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('jQuery loaded:', typeof $ !== 'undefined');
+  console.log('Bootstrap loaded:', typeof bootstrap !== 'undefined');
+  console.log('Accordions found:', document.querySelectorAll('.accordion').length);
+  console.log('Accordion IDs:');
+  document.querySelectorAll('.accordion').forEach(function(el) {
+    console.log(' -', el.id || '(no id)');
+  });
+  console.log('Collapse divs found:', document.querySelectorAll('.accordion-collapse').length);
+});
