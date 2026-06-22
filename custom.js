@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const expandBtn = document.createElement('button');
     expandBtn.type = 'button';
-    expandBtn.className = 'btn btn-sm btn-outline-secondary';
+    expandBtn.className = 'btn btn-sm btn-outline-secondary ms-auto';
     expandBtn.textContent = 'Expand All';
 
     const collapseBtn = document.createElement('button');
