@@ -78,7 +78,11 @@ a, a:hover, btn, btn:hover {
 
 /* ------- Headers ------- */
 
-h1, h2, h3, h4, h5 {
+h1, 
+h2:not(.accordion-header), 
+h3:not(.accordion-header), 
+h4:not(.accordion-header), 
+h5:not(.accordion-header) {
   font-family: var(--font);
   color: var(--dark-gray) !important;
   font-weight: 700 !important;
