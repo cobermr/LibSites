@@ -49,7 +49,7 @@ body {
 p {
   line-height: 1.6em;
 }
-a {
+a:not(.btn) {
   font-weight: 600 !important;
 }
 a:hover {
@@ -72,7 +72,7 @@ a, a:hover, btn, btn:hover {
 .btn-outline-secondary {
   color: #6c757d !important;
 }
-.btn-outline-secondary {
+.btn-outline-secondary:hover {
   color: #fff !important;
 }
 
