@@ -28,23 +28,41 @@ document.addEventListener('DOMContentLoaded', function () {
     btnGroup.appendChild(collapseBtn);
     accordion.parentNode.insertBefore(btnGroup, accordion);
 
-    // 3. Expand All
+    // 3. Expand All — bypass Bootstrap entirely to avoid data-bs-parent interference
     expandBtn.addEventListener('click', function () {
       accordion.querySelectorAll('.accordion-collapse').forEach(function (collapse) {
-        collapse.removeAttribute('data-bs-parent');
-        bootstrap.Collapse.getOrCreateInstance(collapse, { toggle: false }).show();
+        // Destroy any existing Bootstrap instance so it doesn't interfere
+        const instance = bootstrap.Collapse.getInstance(collapse);
+        if (instance) instance.dispose();
+
+        // Directly apply the open state classes
+        collapse.classList.remove('collapse', 'collapsing');
+        collapse.classList.add('collapse', 'show');
+        collapse.style.height = '';
       });
-      setTimeout(function () {
-        accordion.querySelectorAll('.accordion-collapse').forEach(function (collapse) {
-          collapse.setAttribute('data-bs-parent', '#' + accordionId);
-        });
-      }, 400);
+
+      // Update button aria states
+      accordion.querySelectorAll('.accordion-button').forEach(function (btn) {
+        btn.classList.remove('collapsed');
+        btn.setAttribute('aria-expanded', 'true');
+      });
     });
 
-    // 4. Collapse All
+    // 4. Collapse All — same approach, bypass Bootstrap
     collapseBtn.addEventListener('click', function () {
       accordion.querySelectorAll('.accordion-collapse').forEach(function (collapse) {
-        bootstrap.Collapse.getOrCreateInstance(collapse, { toggle: false }).hide();
+        const instance = bootstrap.Collapse.getInstance(collapse);
+        if (instance) instance.dispose();
+
+        collapse.classList.remove('show', 'collapsing');
+        collapse.classList.add('collapse');
+        collapse.style.height = '';
+      });
+
+      // Update button aria states
+      accordion.querySelectorAll('.accordion-button').forEach(function (btn) {
+        btn.classList.add('collapsed');
+        btn.setAttribute('aria-expanded', 'false');
       });
     });
 
