@@ -39,7 +39,7 @@
   --anim-arrow-fast: 0.2s ease-in;
 }
 
-/* ------- General, Text & Links ------- */
+/* ------- General, Text, Links & Buttons ------- */
 html {
   scroll-behavior: smooth;
 }
@@ -51,6 +51,17 @@ p {
 }
 a, a:hover, btn, btn:hover {
     transition: var(--anim-fade) !important;
+}
+.btn-primary {
+  color: #fff !important
+}
+.btn-outline-primary {
+  border: 1px solid var(--red) !important;
+  color: var(--red) !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--red) !important;
+  color: #fff !important;
 }
 
 /* ------- Headers ------- */
@@ -128,9 +139,13 @@ h4, h5 {
 
 /* ------- Cards ------- */
 
-
-
-
+/* ------- Misc ------- */
+.lt-cookie-banner-popover-button {
+  background-color: #212529 !important;
+  border-color: #212529 !important;
+  border-radius: 0 6px 0 0 !important;
+  font-size: 10px !important;
+}
 
 /* ---------------------- Media Queries -------------------- */
 
