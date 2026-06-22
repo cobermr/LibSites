@@ -49,6 +49,12 @@ body {
 p {
   line-height: 1.6em;
 }
+a {
+  font-weight: 600 !important;
+}
+a:hover {
+  color: #000;
+}
 a, a:hover, btn, btn:hover {
     transition: var(--anim-fade) !important;
 }
@@ -61,6 +67,12 @@ a, a:hover, btn, btn:hover {
 }
 .btn-outline-primary:hover {
   background-color: var(--red) !important;
+  color: #fff !important;
+}
+.btn-outline-secondary {
+  color: #6c757d !important;
+}
+.btn-outline-secondary {
   color: #fff !important;
 }
 
@@ -146,6 +158,9 @@ h4, h5 {
   border-radius: 0 6px 0 0 !important;
   font-size: 12px !important;
 }
+..s-lch-widget-float {
+  z-index: 2000 !important;
+}
 
 /* ---------------------- Media Queries -------------------- */
 
@@ -181,10 +196,11 @@ h4, h5 {
 }
 
 /* -------------- Large devices AND SMALLER (desktops, 992px and down) -------------- */
-@media (max-width: 991.98px) {
+@media (max-width: 1400px) {
 .w-75, .w-50 {
     width: 100% !important;
 }
+
 /* -------------- Medium devices AND SMALLER (desktops, 992px and down) -------------- */
 @media (max-width: 576px) {
 .btn {
