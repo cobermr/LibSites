@@ -161,8 +161,9 @@ h4, h5 {
 }
 
 /* ------- Accordions ------- */
-.accordion-header {
+.accordion-button {
   font-weight: 600 !important;
+  color: #000 !important;
 }
 .accordion-button:hover {
   background: #f5f5f5 !important;
