@@ -1,79 +1,53 @@
 //Accordions
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function () {
 
-    $('.accordion').each(function () {
+  document.querySelectorAll('.accordion').forEach(function (accordion) {
+    const accordionId = accordion.id;
+    if (!accordionId) return;
 
-        const $accordion = $(this);
-        const accordionId = $accordion.attr('id');
-
-        // Skip accordions without IDs
-        if (!accordionId) return;
-
-        // Add data-bs-parent to all collapse panels
-        $accordion.find('.accordion-collapse').each(function () {
-            $(this).attr('data-bs-parent', '#' + accordionId);
-        });
-
-        // Create controls
-        const $controls = $(`
-            <div class="accordion-controls mb-2">
-                <button type="button" class="btn btn-sm btn-outline-primary me-2 expand-all">
-                    Expand All
-                </button>
-                <button type="button" class="btn btn-sm btn-outline-secondary collapse-all">
-                    Collapse All
-                </button>
-            </div>
-        `);
-
-        // Insert controls before accordion
-        $accordion.before($controls);
-
-        // Expand All
-        $controls.find('.expand-all').on('click', function () {
-
-            // Temporarily remove data-bs-parent so multiple items can stay open
-            $accordion.find('.accordion-collapse').removeAttr('data-bs-parent');
-
-            $accordion.find('.accordion-collapse').each(function () {
-                bootstrap.Collapse.getOrCreateInstance(this, {
-                    toggle: false
-                }).show();
-            });
-
-            $accordion.find('.accordion-button').removeClass('collapsed');
-        });
-
-        // Collapse All
-        $controls.find('.collapse-all').on('click', function () {
-
-            $accordion.find('.accordion-collapse').each(function () {
-                bootstrap.Collapse.getOrCreateInstance(this, {
-                    toggle: false
-                }).hide();
-            });
-
-            $accordion.find('.accordion-button').addClass('collapsed');
-
-            // Restore normal accordion behavior
-            $accordion.find('.accordion-collapse').attr(
-                'data-bs-parent',
-                '#' + accordionId
-            );
-        });
-
+    // 1. Add data-bs-parent to each collapse div
+    accordion.querySelectorAll('.accordion-collapse').forEach(function (collapse) {
+      collapse.setAttribute('data-bs-parent', '#' + accordionId);
     });
 
-});
+    // 2. Create Expand All / Collapse All buttons
+    const btnGroup = document.createElement('div');
+    btnGroup.className = 'accordion-controls mb-2 d-flex gap-2';
 
+    const expandBtn = document.createElement('button');
+    expandBtn.type = 'button';
+    expandBtn.className = 'btn btn-sm btn-outline-secondary';
+    expandBtn.textContent = 'Expand All';
 
-document.addEventListener('DOMContentLoaded', function () {
-  console.log('jQuery loaded:', typeof $ !== 'undefined');
-  console.log('Bootstrap loaded:', typeof bootstrap !== 'undefined');
-  console.log('Accordions found:', document.querySelectorAll('.accordion').length);
-  console.log('Accordion IDs:');
-  document.querySelectorAll('.accordion').forEach(function(el) {
-    console.log(' -', el.id || '(no id)');
+    const collapseBtn = document.createElement('button');
+    collapseBtn.type = 'button';
+    collapseBtn.className = 'btn btn-sm btn-outline-secondary';
+    collapseBtn.textContent = 'Collapse All';
+
+    btnGroup.appendChild(expandBtn);
+    btnGroup.appendChild(collapseBtn);
+    accordion.parentNode.insertBefore(btnGroup, accordion);
+
+    // 3. Expand All
+    expandBtn.addEventListener('click', function () {
+      accordion.querySelectorAll('.accordion-collapse').forEach(function (collapse) {
+        collapse.removeAttribute('data-bs-parent');
+        bootstrap.Collapse.getOrCreateInstance(collapse, { toggle: false }).show();
+      });
+      setTimeout(function () {
+        accordion.querySelectorAll('.accordion-collapse').forEach(function (collapse) {
+          collapse.setAttribute('data-bs-parent', '#' + accordionId);
+        });
+      }, 400);
+    });
+
+    // 4. Collapse All
+    collapseBtn.addEventListener('click', function () {
+      accordion.querySelectorAll('.accordion-collapse').forEach(function (collapse) {
+        bootstrap.Collapse.getOrCreateInstance(collapse, { toggle: false }).hide();
+      });
+    });
+
   });
-  console.log('Collapse divs found:', document.querySelectorAll('.accordion-collapse').length);
+
 });
