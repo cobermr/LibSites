@@ -160,7 +160,16 @@ h4, h5 {
     font-weight: 400 !important;
 }
 
-/* ------- Cards ------- */
+/* ------- Accordions ------- */
+.accordion-header {
+  font-weight: 600 !important;
+}
+.accordion-header:hover {
+  background: #f5f5f5;
+}
+.accordion-header button[aria-expanded="true"] {
+  background-color: #f5f5f5;
+}
 
 /* ------- Misc ------- */
 .lt-cookie-banner-popover-button {
