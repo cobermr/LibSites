@@ -72,8 +72,9 @@ a, a:hover, btn, btn:hover {
 .btn-outline-secondary {
   color: #6c757d !important;
 }
-.btn-outline-secondary:hover {
+.btn-outline-secondary:hover, .btn-check:checked + .btn {
   color: #fff !important;
+  background-color:#6c757d !important; 
 }
 
 /* ------- Headers ------- */
@@ -164,6 +165,7 @@ h4, h5 {
 .accordion-button {
   font-weight: 600 !important;
   color: #000 !important;
+  font-size: var(--fs-md);
 }
 .accordion-button:hover {
   background: var(--bg-gray) !important;
