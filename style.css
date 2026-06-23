@@ -218,18 +218,32 @@ h4, h5 {
   
 }
 
-/* -------------- Large devices AND SMALLER (desktops, 992px and down) -------------- */
+/* -------------- XX-Large devices (larger desktops, 1400px and down) -------------- */
 @media (max-width: 1400px) {
 .w-75, .w-50 {
     width: 100% !important;
 }
 
-/* -------------- Medium devices AND SMALLER (desktops, 992px and down) -------------- */
+/* -------------- X-Small Devices ONLY (576px and down) -------------- */
 @media (max-width: 576px) {
 .btn {
     display: block !important;
 }
 .embla__slide__caption {
   display: none !important;
+}
+.oneSearchForm {
+  box-shadow: none !important;
+  border: none !important;
+}
+.oneSearchForm input {
+  box-shadow: var(--bs-box-shadow) !important;
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  font-size: var(--fs-xs);
+}
+.oneSearchForm  button {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  margin: 0.75rem 0 !important;
 }
 }
