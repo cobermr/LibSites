@@ -198,6 +198,13 @@ h4, h5 {
 .s-lch-widget-float {
   z-index: 2000 !important;
 }
+.img-rounded {
+  border-radius: .375rem !important;
+  width: 100% !important;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
 
 /* ---------------------- Media Queries -------------------- */
 
