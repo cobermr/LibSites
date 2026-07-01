@@ -205,6 +205,9 @@ h4, h5 {
   object-fit: cover;
   aspect-ratio: 3 / 2;
 }
+ul.spaced-list li {
+  margin-bottom: 10px !important;
+}
 
 /* ---------------------- Media Queries -------------------- */
 
@@ -249,6 +252,7 @@ h4, h5 {
 @media (max-width: 576px) {
 .btn {
     display: block !important;
+    margin-bottom: 5px !important;
 }
 .embla__slide__caption {
   display: none !important;
